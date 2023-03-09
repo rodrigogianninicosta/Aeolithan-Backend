@@ -80,7 +80,7 @@ public class CustomerController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteExistingCustomer(@PathVariable String id) {
         Optional<Customer> customer = customerDBRepository.findById(id);
-        customerDBRepository.deleteById(id);
+        customerDBRepository.delete(customer.get());
         return new ResponseEntity<String>("", HttpStatus.OK);
     }
 }

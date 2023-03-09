@@ -33,9 +33,15 @@ public class Customer {
     private String defense;
     private String speed;
 
-    public Customer(String name, String character, String race,
-                    String health, String attack, String magic,
-                    String defense, String speed){
+    private String skillName;
+    private String skill;
+
+    public Customer(
+            String name, String character, String race,
+            String health, String attack, String magic,
+            String defense, String speed, String skillName,
+            String skill
+    ) {
         Random random = new Random();
         this.id = String.valueOf(random.nextInt(1000000));
         this.name = name;
@@ -50,6 +56,9 @@ public class Customer {
         this.magic = magic;
         this.defense = defense;
         this.speed = speed;
+
+        this.skillName = skillName;
+        this.skill = skill;
     }
 
 }
